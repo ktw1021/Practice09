@@ -51,8 +51,10 @@ public class RecListApp {
 		
 		System.out.println("#모든 사각형의 넓이 합 출력=======================================");
 		//모든 사각형의 넓이 합 구하기 코드 작성
-		for (int i = 0 ; i<rList.size(); i++) {
-		sum += rList.get(i).area();
+		Iterator<Rectangle> it = rList.iterator();
+		while (it.hasNext()) {
+		Rectangle rect = it.next();
+		sum += rect.area();
 		}
 		//모든 사각형의 합 출력
 		System.out.println("모든 사각형의 넓이는 " + sum + " 입니다.");
@@ -63,9 +65,16 @@ public class RecListApp {
 	
 	//리스트 모두를 draw하는 메소드
 	public static void listAllDraw(List<Rectangle> list) {
-		
-		//내용작성 
+		//	리스트 순회:
+		//	- for 문을 통한 인덱스 접근
+		//	- Iterator를 이용한 접근
 	
+		Iterator<Rectangle> it = list.iterator();
+		while(it.hasNext()) {	//	위의 요소 유무 확인
+			Rectangle item = it.next();
+			item.draw();
+		}
+		
 	}
 	
 }

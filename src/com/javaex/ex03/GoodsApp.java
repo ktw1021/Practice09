@@ -15,7 +15,6 @@ public class GoodsApp {
        int sum = 0;
        
        while (true) {
-       
     	   
     	String ask = sc.nextLine();
     	   
@@ -24,6 +23,7 @@ public class GoodsApp {
     	   System.out.println("=================");
     	   break;
        }
+       
        String [] a = ask.split(",");
        int a1 = Integer.parseInt(a[1]);
        int a2 = Integer.parseInt(a[2]);
